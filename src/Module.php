@@ -18,7 +18,7 @@ class Module implements
      */
     public function onBootstrap(EventInterface $e)
     {
-        $application    = $e->getApplication();
+        $application    = $e->getParam('application');
         $eventManager   = $application->getEventManager();
         $sharedManager  = $eventManager->getSharedManager();
         $sharedManager->attach('ZfcUser\Service\User', 'register.post', function (EventInterface $event) use ($application) {
@@ -65,6 +65,7 @@ class Module implements
                 'HtUserRegistration\UserRegistrationService' => 'HtUserRegistration\Factory\UserRegistrationServiceFactory',
                 'HtUserRegistration\SetPasswordForm' => 'HtUserRegistration\Factory\SetPasswordFormFactory',
                 'HtUserRegistration\Authentication\Adapter\EmailVerification' => 'HtUserRegistration\Authentication\Adapter\EmailVerificationFactory',
+                'HtUserRegistration\Mailer\Mailer' => 'HtUserRegistration\Factory\MailerFactory',
             ],
             'aliases' => [
                 'HtUserRegistration\DbAdapter' => 'Zend\Db\Adapter\Adapter'
