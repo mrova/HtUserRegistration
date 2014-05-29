@@ -21,7 +21,7 @@
     "require": {
         "php": ">=5.4",
         "zf-commons/zfc-user": "dev-master",
-        "mrova/mt-mail":"1.0.*"
+        "mrova/mt-mail":"dev-master"
     },
     "suggest": {
         
